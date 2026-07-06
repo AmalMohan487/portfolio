@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amal Mohan | Python &amp; Django Developer Portfolio</title>
+    
+    <meta name="description" content="Portfolio of Amal Mohan, a Computer Science Engineering graduate specializing in Python, Django, and practical AI web applications.">
+    <meta name="keywords" content="Amal Mohan, Python Developer, Django Developer, Software Engineer Portfolio, Computer Vision, India">
+    <meta name="author" content="Amal Mohan">
+    
+    <link rel="canonical" href="[SITE_URL]">
+
+    <link rel="icon" type="image/x-icon" href="[FAVICON_PATH]">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="[SITE_URL]">
+    <meta property="og:title" content="Amal Mohan | Python &amp; Django Developer">
+    <meta property="og:description" content="Computer Science Engineering graduate focused on building practical web applications using Python, Django, and AI.">
+    <meta property="og:image" content="[OG_IMAGE_URL]">
+    
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="[SITE_URL]">
+    <meta property="twitter:title" content="Amal Mohan | Python &amp; Django Developer">
+    <meta property="twitter:description" content="Computer Science Engineering graduate focused on building practical web applications using Python, Django, and AI.">
+    <meta property="twitter:image" content="[OG_IMAGE_URL]">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Amal Mohan",
+      "jobTitle": "Python & Django Developer",
+      "url": "[SITE_URL]",
+      "sameAs": [
+        "[GITHUB_URL]",
+        "[LINKEDIN_URL]",
+        "[X_URL]"
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#0f172a] text-slate-200 antialiased selection:bg-sky-500 selection:text-slate-900">
+
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-wider text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-md" aria-label="Amal Mohan Portfolio Home">
+                AMAL<span class="text-sky-400">.</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-400" aria-label="Main Navigation">
+                <a href="#about" class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-md px-1">About</a>
+                <a href="#skills" class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-md px-1">Skills</a>
+                <a href="#projects" class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-md px-1">Projects</a>
+                <a href="#contact" class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-md px-1">Contact</a>
+                <a href="#contact" class="px-4 py-2 bg-sky-500 text-slate-950 rounded-lg font-semibold hover:bg-sky-400 transition-all shadow-lg shadow-sky-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">Let's Talk</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center text-slate-400 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-md w-10 h-10 transition-colors" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+                <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <div id="mobile-nav-panel" class="hidden md:hidden border-t border-slate-800 bg-[#0f172a]/95 backdrop-blur-md px-6 py-6 transition-all duration-300">
+            <nav class="flex flex-col space-y-4 text-base font-medium text-slate-400" aria-label="Mobile Navigation Menu">
+                <a href="#about" class="mobile-link hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-md py-1">About</a>
+                <a href="#skills" class="mobile-link hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-md py-1">Skills</a>
+                <a href="#projects" class="mobile-link hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-md py-1">Projects</a>
+                <a href="#contact" class="mobile-link hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-md py-1">Contact</a>
+                <a href="#contact" class="mobile-link px-4 py-2 bg-sky-500 text-slate-950 rounded-lg font-semibold hover:bg-sky-400 transition-all text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white">Let's Talk</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="min-h-screen flex items-center justify-center pt-20 px-6 relative overflow-hidden">
+            <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto text-center z-10">
+                <span class="text-sky-400 font-mono tracking-widest text-sm uppercase block mb-4">Python Developer • Django • Artificial Intelligence</span>
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                    Building <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">Practical Web Applications</span> with Python &amp; AI
+                </h1>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    I am a Computer Science Engineering graduate passionate about backend development using Python and Django. I enjoy building practical web applications and AI-powered solutions that solve real-world problems.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#projects" class="w-full sm:w-auto px-8 py-4 bg-sky-500 text-slate-950 font-semibold rounded-xl hover:bg-sky-400 transition-all shadow-xl shadow-sky-500/20 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
+                        View Projects
+                    </a>
+                    <a href="resume.pdf" download="Amal_Mohan_Resume.pdf" class="w-full sm:w-auto px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl border border-slate-700 transition-all text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
+                        Download Resume
+                    </a>
+                    <a href="[GITHUB_URL]" class="w-full sm:w-auto px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl border border-slate-700 transition-all text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 border-t border-slate-800 bg-[#0b1324] relative">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="grid md:grid-cols-12 gap-12 items-center">
+                    <div class="md:col-span-5 relative group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-sky-500 to-blue-500 rounded-2xl transform rotate-3 [transform:scale(1.02)] opacity-20 group-hover:rotate-1 transition-transform duration-300"></div>
+                        <div class="relative bg-slate-800 border border-slate-700 rounded-2xl p-6 overflow-hidden aspect-square flex items-center justify-center">
+                            <svg class="w-full h-full text-sky-400/40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                                <rect x="20" y="40" width="160" height="120" rx="10" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                                <path d="M20 130H180" stroke="currentColor" stroke-width="4"/>
+                                <circle cx="35" cy="55" r="5" fill="currentColor"/>
+                                <circle cx="50" cy="55" r="5" fill="currentColor"/>
+                                <circle cx="65" cy="55" r="5" fill="currentColor"/>
+                                <path d="M70 80L50 95L70 110" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M130 80L150 95L130 110" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M110 75L90 115" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="md:col-span-7">
+                        <h2 class="text-3xl font-bold text-white mb-6">About Me</h2>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Hi, I'm Amal Mohan. I completed a Diploma in Computer Science and a B.Tech in Computer Science Engineering. My primary focus is on backend development, and I am highly interested in using Python, Django, and Artificial Intelligence to build web projects that work cleanly.
+                        </p>
+                        <p class="text-slate-400 leading-relaxed mb-8">
+                            I have built practical applications like Agrosage and an Attendance Management System to apply software concepts directly to real world scenarios. I am currently looking for Python/Django Developer opportunities where I can contribute to backend codebases.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 text-sm font-medium text-slate-300">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-check text-sky-400" aria-hidden="true"></i>
+                                <span>Backend Development</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-check text-sky-400" aria-hidden="true"></i>
+                                <span>Artificial Intelligence</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-check text-sky-400" aria-hidden="true"></i>
+                                <span>Diploma in Computer Science</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-check text-sky-400" aria-hidden="true"></i>
+                                <span>B.Tech in CSE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 border-t border-slate-800">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-4">Technical Toolkit</h2>
+                    <p class="text-slate-400">The core programming languages, frameworks, and web technologies I use.</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                    <div class="bg-slate-800/40 border border-slate-800 hover:border-slate-700 p-6 rounded-xl transition-all hover:-translate-y-1 group">
+                        <i class="fa-brands fa-python text-3xl text-slate-400 group-hover:text-blue-400 transition-colors mb-4" aria-hidden="true"></i>
+                        <h3 class="text-white font-semibold">Python</h3>
+                        <p class="text-xs text-slate-500 mt-1">Programming</p>
+                    </div>
+                    <div class="bg-slate-800/40 border border-slate-800 hover:border-slate-700 p-6 rounded-xl transition-all hover:-translate-y-1 group">
+                        <i class="fa-solid fa-code text-3xl text-slate-400 group-hover:text-amber-500 transition-colors mb-4" aria-hidden="true"></i>
+                        <h3 class="text-white font-semibold">Java</h3>
+                        <p class="text-xs text-slate-500 mt-1">Programming</p>
+                    </div>
+                    <div class="bg-slate-800/40 border border-slate-800 hover:border-slate-700 p-6 rounded-xl transition-all hover:-translate-y-1 group">
+                        <i class="fa-solid fa-cubes text-3xl text-slate-400 group-hover:text-green-400 transition-colors mb-4" aria-hidden="true"></i>
+                        <h3 class="text-white font-semibold">Django</h3>
+                        <p class="text-xs text-slate-500 mt-1">Web Framework</p>
+                    </div>
+                    <div class="bg-slate-800/40 border border-slate-800 hover:border-slate-700 p-6 rounded-xl transition-all hover:-translate-y-1 group">
+                        <i class="fa-brands fa-js text-3xl text-slate-400 group-hover:text-yellow-400 transition-colors mb-4" aria-hidden="true"></i>
+                        <h3 class="text-white font-semibold">JavaScript</h3>
+                        <p class="text-xs text-slate-500 mt-1">Web Development</p>
+                    </div>
+                    <div class="bg-slate-800/40 border border-slate-800 hover:border-slate-700 p-6 rounded-xl transition-all hover:-translate-y-1 group">
+                        <i class="fa-solid fa-layer-group text-3xl text-slate-400 group-hover:text-orange-400 transition-colors mb-4" aria-hidden="true"></i>
+                        <h3 class="text-white font-semibold">HTML &amp; CSS</h3>
+                        <p class="text-xs text-slate-500 mt-1">Web Frontend</p>
+                    </div>
+                    <div class="bg-slate-800/40 border border-slate-800 hover:border-slate-700 p-6 rounded-xl transition-all hover:-translate-y-1 group">
+                        <i class="fa-solid fa-database text-3xl text-slate-400 group-hover:text-cyan-400 transition-colors mb-4" aria-hidden="true"></i>
+                        <h3 class="text-white font-semibold">SQLite</h3>
+                        <p class="text-xs text-slate-500 mt-1">Database</p>
+                    </div>
+                    <div class="bg-slate-800/40 border border-slate-800 hover:border-slate-700 p-6 rounded-xl transition-all hover:-translate-y-1 group">
+                        <i class="fa-solid fa-server text-3xl text-slate-400 group-hover:text-sky-400 transition-colors mb-4" aria-hidden="true"></i>
+                        <h3 class="text-white font-semibold">MySQL</h3>
+                        <p class="text-xs text-slate-500 mt-1">Database</p>
+                    </div>
+                    <div class="bg-slate-800/40 border border-slate-800 hover:border-slate-700 p-6 rounded-xl transition-all hover:-translate-y-1 group">
+                        <i class="fa-solid fa-brain text-3xl text-slate-400 group-hover:text-orange-500 transition-colors mb-4" aria-hidden="true"></i>
+                        <h3 class="text-white font-semibold">TensorFlow</h3>
+                        <p class="text-xs text-slate-500 mt-1">Artificial Intelligence</p>
+                    </div>
+                    <div class="bg-slate-800/40 border border-slate-800 hover:border-slate-700 p-6 rounded-xl transition-all hover:-translate-y-1 group">
+                        <i class="fa-solid fa-eye text-3xl text-slate-400 group-hover:text-teal-400 transition-colors mb-4" aria-hidden="true"></i>
+                        <h3 class="text-white font-semibold">OpenCV</h3>
+                        <p class="text-xs text-slate-500 mt-1">Artificial Intelligence</p>
+                    </div>
+                    <div class="bg-slate-800/40 border border-slate-800 hover:border-slate-700 p-6 rounded-xl transition-all hover:-translate-y-1 group">
+                        <i class="fa-solid fa-network-wired text-3xl text-slate-400 group-hover:text-purple-400 transition-colors mb-4" aria-hidden="true"></i>
+                        <h3 class="text-white font-semibold">MobileNetV2</h3>
+                        <p class="text-xs text-slate-500 mt-1">Artificial Intelligence</p>
+                    </div>
+                    <div class="bg-slate-800/40 border border-slate-800 hover:border-slate-700 p-6 rounded-xl transition-all hover:-translate-y-1 group">
+                        <i class="fa-solid fa-chart-line text-3xl text-slate-400 group-hover:text-pink-400 transition-colors mb-4" aria-hidden="true"></i>
+                        <h3 class="text-white font-semibold">Scikit-learn (SVM)</h3>
+                        <p class="text-xs text-slate-500 mt-1">Artificial Intelligence</p>
+                    </div>
+                    <div class="bg-slate-800/40 border border-slate-800 hover:border-slate-700 p-6 rounded-xl transition-all hover:-translate-y-1 group">
+                        <i class="fa-brands fa-git-alt text-3xl text-slate-400 group-hover:text-red-400 transition-colors mb-4" aria-hidden="true"></i>
+                        <h3 class="text-white font-semibold">Git &amp; GitHub</h3>
+                        <p class="text-xs text-slate-500 mt-1">Development Tools</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 border-t border-slate-800 bg-[#0b1324]">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-4">Featured Projects</h2>
+                    <p class="text-slate-400">A collection of web development and software engineering projects built to address clear requirements.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <article class="bg-slate-800/30 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-slate-700 transition-all">
+                        <div class="p-8">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400">
+                                    <i class="fa-solid fa-users-gear text-xl" aria-hidden="true"></i>
+                                </div>
+                                <span class="text-xs font-mono text-slate-500">Web Development</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-sky-400 transition-colors">Attendance Management System</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                A Django-based attendance management system with Admin, Teacher and Student modules. Includes attendance tracking, PDF reports, email notifications and analytics.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-slate-800 text-xs font-medium text-slate-300 rounded-md">Python</span>
+                                <span class="px-3 py-1 bg-slate-800 text-xs font-medium text-slate-300 rounded-md">Django</span>
+                                <span class="px-3 py-1 bg-slate-800 text-xs font-medium text-slate-300 rounded-md">SQLite</span>
+                            </div>
+                        </div>
+                        <div class="px-8 py-4 bg-slate-900/50 border-t border-slate-800/60 flex items-center justify-between text-sm">
+                            <a href="ams.html" class="text-slate-400 hover:text-white inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded">
+                                View Project <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="bg-slate-800/30 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between group hover:border-slate-700 transition-all">
+                        <div class="p-8">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400">
+                                    <i class="fa-solid fa-seedling text-xl" aria-hidden="true"></i>
+                                </div>
+                                <span class="text-xs font-mono text-slate-500">ML &amp; Django Web App</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">Agrosage</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                An AI-powered tomato leaf disease detection web application built using TensorFlow, MobileNetV2, OpenCV, SVM and Django. Provides disease diagnosis with multilingual recommendations.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-slate-800 text-xs font-medium text-slate-300 rounded-md">Python</span>
+                                <span class="px-3 py-1 bg-slate-800 text-xs font-medium text-slate-300 rounded-md">Django</span>
+                                <span class="px-3 py-1 bg-slate-800 text-xs font-medium text-slate-300 rounded-md">OpenCV</span>
+                                <span class="px-3 py-1 bg-slate-800 text-xs font-medium text-slate-300 rounded-md">TensorFlow</span>
+                            </div>
+                        </div>
+                        <div class="px-8 py-4 bg-slate-900/50 border-t border-slate-800/60 flex items-center justify-between text-sm">
+                            <a href="agro.html" class="text-slate-400 hover:text-white inline-flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded">
+                                View Project <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 border-t border-slate-800 relative">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="grid md:grid-cols-12 gap-12">
+                    <div class="md:col-span-5">
+                        <h2 class="text-3xl font-bold text-white mb-4">Let's Work Together</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                            I have completed my academic degree track and am actively looking for software engineering roles, core Python/Django positions, or graduate technical paths.
+                        </p>
+                        
+                        <div class="space-y-4 text-sm">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-sky-400">
+                                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <span class="text-slate-300">amalmohan487@gmail.com</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-sky-400">
+                                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                </div>
+                                <span class="text-slate-300">India</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:col-span-7">
+                        <form action="https://formsubmit.co/amalmohan487@gmail.com" method="POST" class="space-y-4">
+                            <input type="text" name="_honey" style="display:none">
+                            <input type="hidden" name="_captcha" value="false">
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="form-name" class="block text-xs font-mono uppercase text-slate-500 mb-2">Name</label>
+                                    <input type="text" id="form-name" name="name" required placeholder="John Doe" class="w-full bg-slate-900 border border-slate-800 focus:border-sky-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-xl p-4 text-sm transition-colors text-white">
+                                </div>
+                                <div>
+                                    <label for="form-email" class="block text-xs font-mono uppercase text-slate-500 mb-2">Email</label>
+                                    <input type="email" id="form-email" name="email" required placeholder="john@example.com" class="w-full bg-slate-900 border border-slate-800 focus:border-sky-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-xl p-4 text-sm transition-colors text-white">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-mono uppercase text-slate-500 mb-2">Message</label>
+                                <textarea name="message" required rows="5" placeholder="Tell me about your project..." class="w-full bg-slate-900 border border-slate-800 focus:border-sky-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-xl p-4 text-sm transition-colors text-white resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold rounded-xl transition-colors shadow-lg shadow-sky-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8 border-t border-slate-900 bg-[#0b1324] text-center text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-left sm:text-center">
+                <p>&copy; 2026 Amal Mohan</p>
+                <p class="text-slate-600 mt-0.5">Python &amp; Django Developer</p>
+            </div>
+            <div class="flex space-x-6 text-base" aria-label="Social Profiles">
+                <a href="[GITHUB_URL]" class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-md p-1" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+                <a href="[LINKEDIN_URL]" class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-md p-1" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="[X_URL]" class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-md p-1" aria-label="X Profile"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const navPanel = document.getElementById('mobile-nav-panel');
+            const menuIcon = document.getElementById('menu-icon');
+            const links = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+                menuBtn.setAttribute('aria-expanded', !isExpanded);
+                
+                if (isExpanded) {
+                    navPanel.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                } else {
+                    navPanel.classList.remove('hidden');
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                }
+            }
+
+            menuBtn.addEventListener('click', toggleMenu);
+            links.forEach(link => link.addEventListener('click', () => {
+                if (!navPanel.classList.contains('hidden')) toggleMenu();
+            }));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendance Management System | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .premium-card {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .premium-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    .img-zoom {
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .premium-card:hover .img-zoom {
+      transform: scale(1.04);
+    }
+
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: revealIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes revealIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#fafafa] text-slate-900 antialiased selection:bg-sky-500 selection:text-white">
+
+  <!-- Sticky Navigation -->
+  <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="home.html" class="font-bold text-lg tracking-tight hover:opacity-80 transition">Portfolio</a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#overview" class="hover:text-sky-600 transition">Overview</a>
+        <a href="#workflow" class="hover:text-sky-600 transition">Workflow</a>
+        <a href="#admin-module" class="hover:text-sky-600 transition">Admin</a>
+        <a href="#teacher-module" class="hover:text-sky-600 transition">Teacher</a>
+        <a href="#student-module" class="hover:text-sky-600 transition">Student</a>
+      </div>
+      <a href="home.html#projects" class="px-4 py-2 rounded-xl border border-slate-200 text-sm font-medium hover:bg-slate-50 transition">
+        ← Back to Portfolio
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero / Header Section -->
+  <header class="bg-[#0b1329] text-white overflow-hidden relative border-b border-slate-900">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.15),transparent_45%)]"></div>
+    <div class="max-w-6xl mx-auto px-6 py-28 md:py-36 relative z-10">
+      <p class="uppercase tracking-[0.2em] text-sky-400 text-xs font-bold mb-5 scroll-reveal">
+        Django Web Application
+      </p>
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.15] mb-8 scroll-reveal" style="animation-delay: 0.1s">
+        Attendance <span class="gradient-text">Management System</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-400 max-w-3xl leading-relaxed mb-10 scroll-reveal" style="animation-delay: 0.2s">
+        A secure, role-based web application designed to digitize academic tracking, eliminate paper logs, automate percentage constraints, and drop administrative overhead.
+      </p>
+
+      <div class="flex flex-wrap gap-2.5 mb-12 scroll-reveal" style="animation-delay: 0.3s">
+        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-slate-300">Python / Django</span>
+        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-slate-300">SQLite / PostgreSQL</span>
+        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-slate-300">HTML5 / CSS3 / Bootstrap</span>
+        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-slate-300">Role-Based Access Control</span>
+        <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium text-slate-300">Automated Email Alerts</span>
+      </div>
+
+      <div class="flex flex-wrap gap-4 scroll-reveal" style="animation-delay: 0.4s">
+        <a href="#admin-module" class="bg-white text-slate-900 px-6 py-3.5 rounded-xl font-semibold shadow-sm hover:bg-sky-50 transition duration-300">
+          View Core Modules
+        </a>
+        <a href="#" target="_blank" class="border border-white/20 bg-white/5 px-6 py-3.5 rounded-xl font-semibold backdrop-blur-sm hover:bg-white/10 transition duration-300">
+          GitHub Repository
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Project Overview Section -->
+  <section id="overview" class="max-w-6xl mx-auto px-6 py-24 border-b border-slate-200/60">
+    <div class="grid md:grid-cols-12 gap-12 items-start">
+      <div class="md:col-span-7">
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 mb-6">
+          Project Overview
+        </h2>
+        <div class="h-1 w-16 bg-sky-500 rounded-full mb-8"></div>
+        <p class="text-slate-600 leading-relaxed text-base md:text-lg mb-6">
+          Traditional paper registers are slow, error-prone, and introduce operational delays. This Django-powered framework completely digitizes institutional attendance routines—providing fast tracking, real-time metrics calculation, and secure database storage.
+        </p>
+        <p class="text-slate-600 leading-relaxed text-base md:text-lg">
+          Equipped with automated PDF report creation, multi-tier user logins, and conditional email alerts when attendance rates slip below required criteria, the application optimizes administrative reliability.
+        </p>
+      </div>
+      <div class="md:col-span-5 bg-white rounded-2xl p-8 border border-slate-200/80 shadow-sm">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-6">System Architecture Metrics</h3>
+        <div class="space-y-4 text-sm">
+          <div class="flex justify-between border-b border-slate-100 pb-3">
+            <span class="text-slate-500 font-medium">Backend Core</span>
+            <span class="font-semibold text-slate-800">Django (Python)</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-100 pb-3">
+            <span class="text-slate-500 font-medium">Database Engine</span>
+            <span class="font-semibold text-slate-800">SQLite / PostgreSQL</span>
+          </div>
+          <div class="flex justify-between border-b border-slate-100 pb-3">
+            <span class="text-slate-500 font-medium">Security Layer</span>
+            <span class="font-semibold text-slate-800">Role-Based Access Control (RBAC)</span>
+          </div>
+          <div class="flex justify-between pb-1">
+            <span class="text-slate-500 font-medium">Automated Delivery</span>
+            <span class="font-semibold text-slate-800 text-right">SMTP Email Alerts & PDF Generation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Functional Workflow Section -->
+  <section id="workflow" class="bg-white py-24 border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Functional Workflow</h2>
+        <div class="h-1 w-12 bg-sky-500 rounded-full mx-auto mt-4"></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div class="bg-[#fafafa] rounded-2xl p-6 text-center border border-slate-200/60 transition hover:border-slate-300">
+          <span class="text-3xl mb-3 block">🔒</span>
+          <span class="font-semibold text-slate-800 text-sm tracking-tight block">RBAC Secure Login</span>
+        </div>
+        <div class="bg-[#fafafa] rounded-2xl p-6 text-center border border-slate-200/60 transition hover:border-slate-300">
+          <span class="text-3xl mb-3 block">📝</span>
+          <span class="font-semibold text-slate-800 text-sm tracking-tight block">Teacher Entry Submission</span>
+        </div>
+        <div class="bg-[#fafafa] rounded-2xl p-6 text-center border border-slate-200/60 transition hover:border-slate-300">
+          <span class="text-3xl mb-3 block">⚡</span>
+          <span class="font-semibold text-slate-800 text-sm tracking-tight block">Auto-Percentage Engine</span>
+        </div>
+        <div class="bg-[#fafafa] rounded-2xl p-6 text-center border border-slate-200/60 transition hover:border-slate-300">
+          <span class="text-3xl mb-3 block">📬</span>
+          <span class="font-semibold text-slate-800 text-sm tracking-tight block">Conditional Mail Alerts</span>
+        </div>
+        <div class="bg-[#fafafa] rounded-2xl p-6 text-center border border-slate-200/60 transition hover:border-slate-300">
+          <span class="text-3xl mb-3 block">📄</span>
+          <span class="font-semibold text-slate-800 text-sm tracking-tight block">PDF Report Generation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Modules Deep-Dive -->
+  <section class="max-w-6xl mx-auto px-6 py-24 space-y-32">
+
+    <!-- ADMIN MODULE -->
+    <div id="admin-module" class="border-b border-slate-200/60 pb-24">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 flex items-center gap-3">
+            <span class="text-xl md:text-2xl">👨‍💼</span> Admin Management Module
+          </h2>
+        </div>
+        <a href="#" class="px-5 py-2.5 bg-sky-500 text-white rounded-xl font-semibold text-sm hover:bg-sky-600 shadow-sm transition duration-300 inline-block text-center self-start md:self-auto">
+          Live Demo →
+        </a>
+      </div>
+
+      <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-10 max-w-4xl">
+        The system administrator manages institutional infrastructure, handles organizational entities, assigns cross-functional tasks to instructors, and evaluates analytical trends.
+      </p>
+
+      <!-- Featured Image -->
+      <div class="mb-12">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Featured Dashboard</h4>
+        <div class="premium-card bg-white rounded-2xl p-3 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(0)">
+          <div class="overflow-hidden rounded-xl bg-slate-100 aspect-[16/10] md:aspect-[21/9]">
+            <img src="images/ams/admin/home.png" alt="Control Panel Analytics" class="w-full h-full object-cover img-zoom">
+          </div>
+          <div class="p-4 md:p-6 bg-white">
+            <span class="font-bold text-slate-900 text-base md:text-lg block mb-1">Control Panel Analytics</span>
+            <span class="text-xs md:text-sm text-slate-500 leading-relaxed">Central control panel showing analytics, users, attendance statistics and quick actions.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Features Grid -->
+      <div class="bg-white border border-slate-200/80 rounded-2xl p-6 md:p-8 mb-12 shadow-sm">
+        <h4 class="font-bold text-slate-900 mb-6 text-xs tracking-wider uppercase">Key Features & Permissions</h4>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs md:text-sm text-slate-600">
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Dynamic Department Configurations
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Multi-Semester Structuring
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> User Provisioning (Teacher & Student)
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Functional Course Mapping
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Cross-Institutional Metrics Monitoring
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Automated PDF Record Structuring
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid Screenshots -->
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-6">Module Screenshots</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          
+          <div class="premium-card bg-white rounded-2xl p-2.5 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(1)">
+            <div class="overflow-hidden rounded-xl bg-slate-50 aspect-video mb-3">
+              <img src="images/ams/admin/login.png" alt="Secure Login Gateway" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="p-2">
+              <span class="font-bold text-slate-900 text-sm block mb-1">Secure Login Gateway</span>
+              <span class="text-xs text-slate-500 leading-relaxed block">Protected access portal requiring authenticated admin credentials for backend execution.</span>
+            </div>
+          </div>
+
+          <div class="premium-card bg-white rounded-2xl p-2.5 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(2)">
+            <div class="overflow-hidden rounded-xl bg-slate-50 aspect-video mb-3">
+              <img src="images/ams/admin/teach.png" alt="Teacher Management" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="p-2">
+              <span class="font-bold text-slate-900 text-sm block mb-1">Teacher Management</span>
+              <span class="text-xs text-slate-500 leading-relaxed block">Administrative interface to provision accounts, register faculty details, and manage instructors.</span>
+            </div>
+          </div>
+
+          <div class="premium-card bg-white rounded-2xl p-2.5 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(3)">
+            <div class="overflow-hidden rounded-xl bg-slate-50 aspect-video mb-3">
+              <img src="images/ams/admin/tr.png" alt="Student Management" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="p-2">
+              <span class="font-bold text-slate-900 text-sm block mb-1">Student Management</span>
+              <span class="text-xs text-slate-500 leading-relaxed block">Centralized portal for indexing student batches, handling enrollment parameters, and profile details.</span>
+            </div>
+          </div>
+
+          <div class="premium-card bg-white rounded-2xl p-2.5 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(4)">
+            <div class="overflow-hidden rounded-xl bg-slate-50 aspect-video mb-3">
+              <img src="images/ams/admin/dept.png" alt="Department Management" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="p-2">
+              <span class="font-bold text-slate-900 text-sm block mb-1">Department Management</span>
+              <span class="text-xs text-slate-500 leading-relaxed block">Configuration matrix to organize academic streams, branches, and specialized department structures.</span>
+            </div>
+          </div>
+
+          <div class="premium-card bg-white rounded-2xl p-2.5 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(5)">
+            <div class="overflow-hidden rounded-xl bg-slate-50 aspect-video mb-3">
+              <img src="images/ams/admin/sub.png" alt="Subject Management" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="p-2">
+              <span class="font-bold text-slate-900 text-sm block mb-1">Subject Management</span>
+              <span class="text-xs text-slate-500 leading-relaxed block">Curriculum catalog editor to catalog course codes, subjects, and syllabi specifications.</span>
+            </div>
+          </div>
+
+          <div class="premium-card bg-white rounded-2xl p-2.5 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(6)">
+            <div class="overflow-hidden rounded-xl bg-slate-50 aspect-video mb-3">
+              <img src="images/ams/admin/assign.png" alt="Assign Subjects" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="p-2">
+              <span class="font-bold text-slate-900 text-sm block mb-1">Assign Subjects</span>
+              <span class="text-xs text-slate-500 leading-relaxed block">Relational mapping console linking distinct faculty members to specific subjects and student batches.</span>
+            </div>
+          </div>
+
+          <div class="premium-card bg-white rounded-2xl p-2.5 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(7)">
+            <div class="overflow-hidden rounded-xl bg-slate-50 aspect-video mb-3">
+              <img src="images/ams/admin/rept.png" alt="Report Dashboard" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="p-2">
+              <span class="font-bold text-slate-900 text-sm block mb-1">Report Dashboard</span>
+              <span class="text-xs text-slate-500 leading-relaxed block">Institutional analytical tracker evaluating attendance metrics and trend insights across semesters.</span>
+            </div>
+          </div>
+
+          <div class="premium-card bg-white rounded-2xl p-2.5 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(8)">
+            <div class="overflow-hidden rounded-xl bg-slate-50 aspect-video mb-3">
+              <img src="images/ams/admin/rep1.png" alt="Generate Reports" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="p-2">
+              <span class="font-bold text-slate-900 text-sm block mb-1">Generate Reports</span>
+              <span class="text-xs text-slate-500 leading-relaxed block">Engine to extract custom database queries and compile structural attendance documents into PDFs.</span>
+            </div>
+          </div>
+
+          <div class="premium-card bg-white rounded-2xl p-2.5 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(9)">
+            <div class="overflow-hidden rounded-xl bg-slate-50 aspect-video mb-3">
+              <img src="images/ams/admin/Screenshot_17-6-2026_122049_127.0.0.1.jpeg" alt="Automated Scheduling" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="p-2">
+              <span class="font-bold text-slate-900 text-sm block mb-1">Automated Scheduling</span>
+              <span class="text-xs text-slate-500 leading-relaxed block">Configuration engine tracking programmatic workflows and backend automated structural constraints.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- TEACHER MODULE -->
+    <div id="teacher-module" class="border-b border-slate-200/60 pb-24">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 flex items-center gap-3">
+            <span class="text-xl md:text-2xl">👨‍🏫</span> Faculty Workspace Module
+          </h2>
+        </div>
+        <a href="#" class="px-5 py-2.5 bg-sky-500 text-white rounded-xl font-semibold text-sm hover:bg-sky-600 shadow-sm transition duration-300 inline-block text-center self-start md:self-auto">
+          Live Demo →
+        </a>
+      </div>
+
+      <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-10 max-w-4xl">
+        Teachers access structured workspaces mapped directly to their curricular roles, enabling rapid attendance collection and immediate submission.
+      </p>
+
+      <!-- Featured Image -->
+      <div class="mb-12">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Featured Dashboard</h4>
+        <div class="premium-card bg-white rounded-2xl p-3 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(11)">
+          <div class="overflow-hidden rounded-xl bg-slate-100 aspect-[16/10] md:aspect-[21/9]">
+            <img src="images/ams/teacher/home.png" alt="Teacher Dashboard" class="w-full h-full object-cover img-zoom">
+          </div>
+          <div class="p-4 md:p-6 bg-white">
+            <span class="font-bold text-slate-900 text-base block mb-1">Teacher Dashboard</span>
+            <span class="text-xs md:text-sm text-slate-500 leading-relaxed">Instructor portal layout providing aggregated class summaries, mapped course trackers, and fast utility hooks.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Features Grid -->
+      <div class="bg-white border border-slate-200/80 rounded-2xl p-6 md:p-8 mb-12 shadow-sm">
+        <h4 class="font-bold text-slate-900 mb-6 text-xs tracking-wider uppercase">Key Features & Permissions</h4>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs md:text-sm text-slate-600">
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Target Course Tracking Filtering
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Interactive Roll Call Configuration
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Automated Relational DB Storage
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Real-time Update Preventions
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Structural Assignment Distribution
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Curricular Material Repository
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid Screenshots -->
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-6">Module Screenshots</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          
+          <div class="premium-card bg-white rounded-2xl p-2.5 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(10)">
+            <div class="overflow-hidden rounded-xl bg-slate-50 aspect-video mb-3">
+              <img src="images/ams/teacher/login.png" alt="Teacher Login Window" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="p-2">
+              <span class="font-bold text-slate-900 text-sm block mb-1">Teacher Login Window</span>
+              <span class="text-xs text-slate-500 leading-relaxed block">Dedicated faculty login interface isolating teacher workspace scopes from core administration parameters.</span>
+            </div>
+          </div>
+
+          <div class="premium-card bg-white rounded-2xl p-2.5 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(12)">
+            <div class="overflow-hidden rounded-xl bg-slate-50 aspect-video mb-3">
+              <img src="images/ams/teacher/atten.jpeg" alt="Attendance Marking" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="p-2">
+              <span class="font-bold text-slate-900 text-sm block mb-1">Attendance Marking</span>
+              <span class="text-xs text-slate-500 leading-relaxed block">Interactive digital roster for marking present/absent states with immediate batch submission hooks.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- STUDENT MODULE -->
+    <div id="student-module" class="pb-12">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 flex items-center gap-3">
+            <span class="text-xl md:text-2xl">👨‍🎓</span> Student Metrics Portal
+          </h2>
+        </div>
+        <a href="#" class="px-5 py-2.5 bg-sky-500 text-white rounded-xl font-semibold text-sm hover:bg-sky-600 shadow-sm transition duration-300 inline-block text-center self-start md:self-auto">
+          Live Demo →
+        </a>
+      </div>
+
+      <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-10 max-w-4xl">
+        Students log into an interactive, read-only analytics portal to evaluate cumulative calculations, monitor performance metrics, and review attendance records.
+      </p>
+
+      <!-- Featured Image -->
+      <div class="mb-12">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Featured Dashboard</h4>
+        <div class="premium-card bg-white rounded-2xl p-3 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(14)">
+          <div class="overflow-hidden rounded-xl bg-slate-100 aspect-[16/10] md:aspect-[21/9]">
+            <img src="images/ams/std/home.png" alt="Student Dashboard" class="w-full h-full object-cover img-zoom">
+          </div>
+          <div class="p-4 md:p-6 bg-white">
+            <span class="font-bold text-slate-900 text-base block mb-1">Student Dashboard</span>
+            <span class="text-xs md:text-sm text-slate-500 leading-relaxed">Personalized panel calculating real-time attendance stats, dynamic semester standings, and alert indicators.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Features Grid -->
+      <div class="bg-white border border-slate-200/80 rounded-2xl p-6 md:p-8 mb-12 shadow-sm">
+        <h4 class="font-bold text-slate-900 mb-6 text-xs tracking-wider uppercase">Key Features & Permissions</h4>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs md:text-sm text-slate-600">
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Real-time Cumulative Percentage Reviews
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Detailed Attendance Log Extractions
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Automated Criteria Gap Assessment
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Course Timetable Tracking View
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Institutional Resource Downloads
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-sky-500 font-bold">✓</span> Critical Deficiency Alert Receivers
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid Screenshots -->
+      <div>
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-6">Module Screenshots</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          
+          <div class="premium-card bg-white rounded-2xl p-2.5 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(13)">
+            <div class="overflow-hidden rounded-xl bg-slate-50 aspect-video mb-3">
+              <img src="images/ams/std/login.png" alt="Student Login Window" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="p-2">
+              <span class="font-bold text-slate-900 text-sm block mb-1">Student Login Window</span>
+              <span class="text-xs text-slate-500 leading-relaxed block">Isolated credentials access point tailored for student profile queries and dashboard rendering.</span>
+            </div>
+          </div>
+
+          <div class="premium-card bg-white rounded-2xl p-2.5 border border-slate-200/80 shadow-sm cursor-pointer" onclick="openLightbox(15)">
+            <div class="overflow-hidden rounded-xl bg-slate-50 aspect-video mb-3">
+              <img src="images/ams/std/atten.png" alt="Attendance Records" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="p-2">
+              <span class="font-bold text-slate-900 text-sm block mb-1">Attendance Records</span>
+              <span class="text-xs text-slate-500 leading-relaxed block">Granular chronological log displaying lecture attendance statuses across individual modules.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Structural Goals Callout -->
+  <section class="max-w-6xl mx-auto px-6 py-16 mb-16">
+    <div class="bg-gradient-to-r from-sky-50/60 to-blue-50/60 border border-sky-100 rounded-3xl p-10 md:p-14 relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 text-9xl select-none opacity-5">🎯</div>
+      <p class="text-xs uppercase tracking-[0.2em] text-sky-700 font-bold mb-4">Core Structural Goals</p>
+      <blockquote class="text-xl md:text-3xl font-extrabold leading-relaxed text-slate-800 max-w-4xl">
+        “Eliminating paper friction, mitigating logging errors, and automating communication constraints across institutional structures.”
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0b1329] text-slate-500 text-center py-12 text-xs md:text-sm border-t border-slate-900">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 AMS Project Showcase | Built with Tailwind CSS.</p>
+      <div class="flex gap-6 text-slate-400">
+        <a href="#overview" class="hover:text-white transition">Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal Components -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex flex-col items-center justify-center p-4 transition-all duration-300 opacity-0">
+    <!-- Close Button -->
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 z-50 p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition duration-200" aria-label="Close lightbox">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+
+    <!-- Navigation Buttons -->
+    <button onclick="prevSlide()" class="absolute left-4 md:left-8 p-3 rounded-full bg-white/5 text-white border border-white/10 hover:bg-white/15 transition duration-200" aria-label="Previous screenshot">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button onclick="nextSlide()" class="absolute right-4 md:right-8 p-3 rounded-full bg-white/5 text-white border border-white/10 hover:bg-white/15 transition duration-200" aria-label="Next screenshot">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </button>
+
+    <!-- Content Area -->
+    <div class="max-w-5xl w-full flex flex-col items-center">
+      <div class="bg-slate-900 border border-white/10 rounded-2xl p-2 shadow-2xl overflow-hidden w-full max-h-[70vh] flex items-center justify-center">
+        <img id="lightbox-img" src="" alt="Lightbox Target View" class="max-w-full max-h-[68vh] object-contain rounded-xl">
+      </div>
+      <div class="text-center mt-6 max-w-2xl px-4">
+        <h3 id="lightbox-title" class="text-lg md:text-xl font-bold text-white mb-2">Screenshot Title</h3>
+        <p id="lightbox-desc" class="text-xs md:text-sm text-slate-400">Screenshot description structural copy text.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Controller Script Architecture -->
+  <script>
+    const screenshots = [
+      // Admin Module (0-9)
+      { src: "images/ams/admin/home.png", title: "Control Panel Analytics", desc: "Central control panel showing analytics, users, attendance statistics and quick actions." },
+      { src: "images/ams/admin/login.png", title: "Secure Login Gateway", desc: "Protected access portal requiring authenticated admin credentials for backend execution." },
+      { src: "images/ams/admin/teach.png", title: "Teacher Management", desc: "Administrative interface to provision accounts, register faculty details, and manage instructors." },
+      { src: "images/ams/admin/tr.png", title: "Student Management", desc: "Centralized portal for indexing student batches, handling enrollment parameters, and profile details." },
+      { src: "images/ams/admin/dept.png", title: "Department Management", desc: "Configuration matrix to organize academic streams, branches, and specialized department structures." },
+      { src: "images/ams/admin/sub.png", title: "Subject Management", desc: "Curriculum catalog editor to catalog course codes, subjects, and syllabi specifications." },
+      { src: "images/ams/admin/assign.png", title: "Assign Subjects", desc: "Relational mapping console linking distinct faculty members to specific subjects and student batches." },
+      { src: "images/ams/admin/rept.png", title: "Report Dashboard", desc: "Institutional analytical tracker evaluating attendance metrics and trend insights across semesters." },
+      { src: "images/ams/admin/rep1.png", title: "Generate Reports", desc: "Engine to extract custom database queries and compile structural attendance documents into PDFs." },
+      { src: "images/ams/admin/Screenshot_17-6-2026_122049_127.0.0.1.jpeg", title: "Automated Scheduling", desc: "Configuration engine tracking programmatic workflows and backend automated structural constraints." },
+      
+      // Teacher Module (10-12)
+      { src: "images/ams/teacher/login.png", title: "Teacher Login Window", desc: "Dedicated faculty login interface isolating teacher workspace scopes from core administration parameters." },
+      { src: "images/ams/teacher/home.png", title: "Teacher Dashboard", desc: "Instructor portal layout providing aggregated class summaries, mapped course trackers, and fast utility hooks." },
+      { src: "images/ams/teacher/atten.jpeg", title: "Attendance Marking", desc: "Interactive digital roster for marking present/absent states with immediate batch submission hooks." },
+      
+      // Student Module (13-15)
+      { src: "images/ams/std/login.png", title: "Student Login Window", desc: "Isolated credentials access point tailored for student profile queries and dashboard rendering." },
+      { src: "images/ams/std/home.png", title: "Student Dashboard", desc: "Personalized panel calculating real-time attendance stats, dynamic semester standings, and alert indicators." },
+      { src: "images/ams/std/atten.png", title: "Attendance Records", desc: "Granular chronological log displaying lecture attendance statuses across individual modules." }
+    ];
+
+    let currentIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDesc = document.getElementById('lightbox-desc');
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightboxContent();
+      lightbox.classList.remove('hidden');
+      setTimeout(() => {
+        lightbox.classList.remove('opacity-0');
+      }, 10);
+      document.body.style.overflow = 'hidden'; 
+    }
+
+    function closeLightbox() {
+      lightbox.classList.add('opacity-0');
+      setTimeout(() => {
+        lightbox.classList.add('hidden');
+      }, 300);
+      document.body.style.overflow = ''; 
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % screenshots.length;
+      updateLightboxContent();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + screenshots.length) % screenshots.length;
+      updateLightboxContent();
+    }
+
+    function updateLightboxContent() {
+      const current = screenshots[currentIndex];
+      lightboxImg.src = current.src;
+      lightboxImg.alt = current.title;
+      lightboxTitle.textContent = current.title;
+      lightboxDesc.textContent = current.desc;
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (!lightbox.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+      }
+    });
+
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox || e.target.parentElement === lightbox) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tomato Leaf Disease Detection System | Amal Mohan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #10b981, #22c55e, #84cc16);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 72px;
+      height: 4px;
+      margin-top: 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #10b981, #84cc16);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="home.html" class="font-bold text-xl">Amal Mohan</a>
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#overview" class="hover:text-emerald-600">Overview</a>
+        <a href="#workflow" class="hover:text-emerald-600">Workflow</a>
+        <a href="#screenshots" class="hover:text-emerald-600">Screenshots</a>
+        <a href="#features" class="hover:text-emerald-600">Features</a>
+      </div>
+      <a href="home.html#projects" class="px-4 py-2 rounded-lg border border-slate-300 text-sm font-medium hover:bg-slate-100">
+        ← Back to Portfolio
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="bg-gradient-to-br from-emerald-950 via-emerald-900 to-lime-800 text-white">
+    <div class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+      <p class="uppercase tracking-[0.25em] text-emerald-300 text-sm font-semibold mb-4">
+        AI + Agriculture Project
+      </p>
+      <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+        Tomato Leaf <span class="gradient-text">Disease Detection</span>
+      </h1>
+      <p class="text-lg md:text-xl text-emerald-100 max-w-3xl leading-9 mb-8">
+        An AI-powered web application that detects tomato leaf diseases from images and provides detailed explanations and treatment recommendations for farmers.
+      </p>
+
+      <div class="flex flex-wrap gap-3 mb-10">
+        <span class="px-4 py-2 bg-white/10 rounded-full text-sm">Python</span>
+        <span class="px-4 py-2 bg-white/10 rounded-full text-sm">Django</span>
+        <span class="px-4 py-2 bg-white/10 rounded-full text-sm">TensorFlow/Keras</span>
+        <span class="px-4 py-2 bg-white/10 rounded-full text-sm">CNN</span>
+        <span class="px-4 py-2 bg-white/10 rounded-full text-sm">OpenAI API</span>
+      </div>
+
+      <div class="flex flex-wrap gap-4">
+        <a href="#screenshots" class="bg-white text-emerald-900 px-6 py-3 rounded-xl font-semibold hover:bg-emerald-50">
+          View Screenshots
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" class="border border-white/30 px-6 py-3 rounded-xl font-semibold hover:bg-white/10">
+          GitHub Repository
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Overview -->
+  <section id="overview" class="max-w-6xl mx-auto px-6 py-24">
+    <h2 class="text-4xl font-bold section-title mb-10">Project Overview</h2>
+    <div class="grid md:grid-cols-2 gap-10">
+      <div>
+        <p class="text-slate-600 leading-9 text-lg mb-6">
+          Farmers often struggle to identify plant diseases accurately. This project uses a Convolutional Neural Network (CNN) to analyze tomato leaf images and instantly predict diseases.
+        </p>
+        <p class="text-slate-600 leading-9 text-lg">
+          The system also provides disease descriptions, treatment recommendations, and stores diagnosis history so users can track past detections.
+        </p>
+      </div>
+      <div class="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
+        <h3 class="text-xl font-semibold mb-4">Key Metrics</h3>
+        <div class="space-y-4 text-sm">
+          <div class="flex justify-between"><span>Dataset</span><span class="font-semibold">Tomato Leaf Images</span></div>
+          <div class="flex justify-between"><span>Model</span><span class="font-semibold">CNN / MobileNetV2</span></div>
+          <div class="flex justify-between"><span>Output</span><span class="font-semibold">Disease + Remedy</span></div>
+          <div class="flex justify-between"><span>Users</span><span class="font-semibold">Farmers & Admin</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflow -->
+  <section id="workflow" class="bg-white py-24 border-y border-slate-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold section-title mb-10">System Workflow</h2>
+      <div class="grid md:grid-cols-6 gap-4">
+        <div class="bg-slate-50 rounded-2xl p-5 text-center">1️⃣<br><span class="font-semibold">Upload Image</span></div>
+        <div class="bg-slate-50 rounded-2xl p-5 text-center">2️⃣<br><span class="font-semibold">Preprocess</span></div>
+        <div class="bg-slate-50 rounded-2xl p-5 text-center">3️⃣<br><span class="font-semibold">CNN+SVM Predicts</span></div>
+        <div class="bg-slate-50 rounded-2xl p-5 text-center">4️⃣<br><span class="font-semibold">Show Disease</span></div>
+        <div class="bg-slate-50 rounded-2xl p-5 text-center">5️⃣<br><span class="font-semibold">Suggest Remedy</span></div>
+        <div class="bg-slate-50 rounded-2xl p-5 text-center">6️⃣<br><span class="font-semibold">Save History</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section id="screenshots" class="max-w-6xl mx-auto px-6 py-24">
+    <h2 class="text-4xl font-bold section-title mb-10">System Screenshots</h2>
+
+    <!-- Authentication -->
+    <div class="mb-20">
+      <h3 class="text-2xl font-bold mb-6">Authentication Module</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm card-hover">
+          <img src="images/agro/home.png" alt="Homepage Screenshot" class="aspect-video w-full object-cover rounded-2xl bg-slate-200">
+          <p class="mt-4 text-sm text-slate-600">Landing page with Login and Sign Up options.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm card-hover">
+          <img src="images/agro/log.png" alt="Login Screenshot" class="aspect-video w-full object-cover rounded-2xl bg-slate-200">
+          <p class="mt-4 text-sm text-slate-600">Secure user authentication.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm card-hover">
+          <img src="images/agro/reg.png" alt="Sign Up Screenshot" class="aspect-video w-full object-cover rounded-2xl bg-slate-200">
+          <p class="mt-4 text-sm text-slate-600">New users can register easily.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- User Module -->
+    <div class="mb-20">
+      <h3 class="text-2xl font-bold mb-6">User Module</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm card-hover"><img src="images/agro/userhome.png" alt="User Dashboard" class="aspect-video w-full object-cover rounded-2xl bg-slate-200"><p class="mt-4 text-sm text-slate-600">Main dashboard after login.</p></div>
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm card-hover"><img src="images/agro/digno.png" alt="Diagnosis Page" class="aspect-video w-full object-cover rounded-2xl bg-slate-200"><p class="mt-4 text-sm text-slate-600">Upload a leaf image for analysis.</p></div>
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm card-hover"><img src="images/agro/res1.png" alt="Prediction Result" class="aspect-video w-full object-cover rounded-2xl bg-slate-200"><p class="mt-4 text-sm text-slate-600">Displays disease name, confidence, and details.</p></div>
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm card-hover"><img src="images/agro/history.png" alt="History Tracking" class="aspect-video w-full object-cover rounded-2xl bg-slate-200"><p class="mt-4 text-sm text-slate-600">View all previous diagnoses.</p></div>
+      </div>
+    </div>
+
+    <!-- Admin Module -->
+    <div>
+      <h3 class="text-2xl font-bold mb-6">Admin Module</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm card-hover"><img src="images/agro/admin/adhome.png" alt="Admin Dashboard" class="aspect-video w-full object-cover rounded-2xl bg-slate-200"><p class="mt-4 text-sm text-slate-600">Overview of users, diseases, and diagnoses.</p></div>
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm card-hover"><img src="images/agro/admin/user.png" alt="User Management" class="aspect-video w-full object-cover rounded-2xl bg-slate-200"><p class="mt-4 text-sm text-slate-600">User Management.</p></div>
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm card-hover"><img src="images/agro/admin/dis.png" alt="Disease Management" class="aspect-video w-full object-cover rounded-2xl bg-slate-200"><p class="mt-4 text-sm text-slate-600">Add and update disease and their remedy information.</p></div>
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm card-hover"><img src="images/agro/admin/monitoring.png" alt="monitoring" class="aspect-video w-full object-cover rounded-2xl bg-slate-200"><p class="mt-4 text-sm text-slate-600">Diagnosis monitoring.</p></div>
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm card-hover"><img src="images/agro/admin/userchat.png" alt="user chat" class="aspect-video w-full object-cover rounded-2xl bg-slate-200"><p class="mt-4 text-sm text-slate-600">User chat.</p></div>
+        <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm card-hover"><img src="images/agro/admin/data.png" alt="dataset" class="aspect-video w-full object-cover rounded-2xl bg-slate-200"><p class="mt-4 text-sm text-slate-600">Dataset collection for future training.</p></div>
+
+
+      </div>
+    </div>admin/
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="bg-white py-24 border-y border-slate-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold section-title mb-10">Key Features</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-slate-50 rounded-3xl p-6">🌿 Real-time disease detection</div>
+        <div class="bg-slate-50 rounded-3xl p-6">💊 Remedy recommendations</div>
+        <div class="bg-slate-50 rounded-3xl p-6">📚 Diagnosis history tracking</div>
+        <div class="bg-slate-50 rounded-3xl p-6">👤 User authentication</div>
+        <div class="bg-slate-50 rounded-3xl p-6">🛠️ Admin management panel</div>
+        <div class="bg-slate-50 rounded-3xl p-6">🤖 AI-powered prediction engine</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact -->
+  <section class="max-w-6xl mx-auto px-6 py-24">
+    <div class="bg-gradient-to-r from-emerald-50 to-lime-50 border border-emerald-100 rounded-[2rem] p-10">
+      <p class="text-sm uppercase tracking-[0.2em] text-emerald-700 font-semibold mb-4">Project Impact</p>
+      <blockquote class="text-2xl md:text-3xl font-bold leading-relaxed text-slate-800 max-w-4xl">
+        Helping farmers diagnose crop diseases instantly and take corrective action before major yield loss occurs.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 text-center py-8 text-sm">
+    © 2026 Amal Mohan. Built with HTML and Tailwind CSS.
+  </footer>
+
+</body>
+</html>
